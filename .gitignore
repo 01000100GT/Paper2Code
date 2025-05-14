@@ -1,0 +1,14 @@
+outputs/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+*.pyzw
+.venv/
+.idea/
+.vscode/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
