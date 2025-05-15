@@ -70,6 +70,12 @@ class Pipeline:
         # 中文注释：实例化JSONCleaner并执行清理操作。
         # 假设JSONCleaner的clean方法接收输入和输出路径
         print("\nStage 0: Cleaning JSON...")
+        # // 中文注释: 添加详细路径检查日志
+        print(f"// 中文注释: [Pipeline.run] 传递给 JSONCleaner 的输入路径: '{self.paper_json_path}'")
+        absolute_pipeline_input_path = os.path.abspath(self.paper_json_path)
+        print(f"// 中文注释: [Pipeline.run] 绝对路径: '{absolute_pipeline_input_path}'")
+        print(f"// 中文注释: [Pipeline.run] 文件是否存在 (os.path.exists): {os.path.exists(absolute_pipeline_input_path)}")
+
         json_cleaner = JSONCleaner(self.paper_json_path, self.cleaned_paper_json_path)
         json_cleaner.clean_json() # 假设clean_json是其执行方法
         print(f"Cleaned JSON saved to: {self.cleaned_paper_json_path}")

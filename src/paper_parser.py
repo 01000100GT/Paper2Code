@@ -1,4 +1,5 @@
 import json
+import os # // 中文注释: 确保导入os模块
 
 class JSONCleaner:
     """
@@ -35,6 +36,13 @@ class JSONCleaner:
         // input_json_path: 输入JSON文件的路径。
         // output_json_path: 清理后JSON文件的保存路径。
         """
+        # // 中文注释: 添加详细路径检查日志
+        print(f"// 中文注释: [JSONCleaner.clean_json_file] 尝试打开输入文件: '{input_json_path}'")
+        absolute_input_path = os.path.abspath(input_json_path)
+        print(f"// 中文注释: [JSONCleaner.clean_json_file] 绝对路径: '{absolute_input_path}'")
+        print(f"// 中文注释: [JSONCleaner.clean_json_file] 文件是否存在 (os.path.exists): {os.path.exists(absolute_input_path)}")
+        print(f"// 中文注释: [JSONCleaner.clean_json_file] 是否为文件 (os.path.isfile): {os.path.isfile(absolute_input_path)}")
+
         try:
             with open(input_json_path, 'r') as f:
                 data = json.load(f)
